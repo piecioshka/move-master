@@ -1,6 +1,11 @@
-# MoveMaster - Apply moving everything!
+# MoveMaster.js - Apply moving everything!
 
-We have for instance `<img id="logo" src="..." alt="Logo" />`.<br />
+We have for instance that structure in DOM:
+
+```html
+<img id="logo" src="..." alt="Logo" />`
+```
+
 Create in JS file reference to that element:
 
 ```js
@@ -9,7 +14,7 @@ var logo = document.querySelector('#logo');
 
 Next, run that one line, to enable logo moving:
 
-```
+```js
 new MoveMaster(/* HTMLElement */ logo);
 ```
 
