@@ -1,16 +1,23 @@
-# MoveMaster - Apply move on HTMLElement
+# MoveMaster - Apply moving everything!
 
-Run one line:
+We have for instance `<img id="logo" src="..." alt="Logo" />'.<br />
+Create in JS file reference to that element:
 
 ```js
-MoveMaster.move(/* HTMLElement */ object);
+var logo = document.querySelector('#logo');
+```
+
+Next, run that one line, to enable logo moving:
+
+```
+new MoveMaster(/* HTMLElement */ logo);
 ```
 
 To enable moving on selected HTMLElement.
 
 ## Restrictions
 
-Tested only under newest WebKit browsers (Chrome, Safari) and Gecko (Firefox).
+Tested only under newest _WebKit_ browsers (Chrome, Safari) and _Gecko_ (Firefox).
 
 ## License
 
