@@ -1,6 +1,6 @@
 # MoveMaster - Apply moving everything!
 
-We have for instance `<img id="logo" src="..." alt="Logo" />'.<br />
+We have for instance `<img id="logo" src="..." alt="Logo" />`.<br />
 Create in JS file reference to that element:
 
 ```js
