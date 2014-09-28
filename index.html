@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>move-master</title>
+    <link rel="stylesheet" href="styles/default.css"/>
+</head>
+<body>
+    <img draggable="false" src="http://placeskull.com/170/170" alt="Skull"/>
+    <script src="scripts/MoveMaster.js"></script>
+    <script>
+        (function (root, $) {
+            return new root.MoveMaster($('img'));
+        }(this, document.querySelector.bind(document)));
+    </script>
+</body>
+</html>
