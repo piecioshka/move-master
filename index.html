@@ -10,7 +10,9 @@
     <script src="scripts/MoveMaster.js"></script>
     <script>
         (function (root, $) {
-            return new root.MoveMaster($('img'));
+            return new root.MoveMaster({
+                object: $('img')
+            });
         }(this, document.querySelector.bind(document)));
     </script>
 </body>
