@@ -9,11 +9,11 @@
     <img draggable="false" src="http://placeskull.com/170/170" alt="Skull"/>
     <script src="scripts/MoveMaster.js"></script>
     <script>
-        (function (root, $) {
+        (function (root) {
             return new root.MoveMaster({
-                object: $('img')
+                object: root.document.querySelector('img')
             });
-        }(this, document.querySelector.bind(document)));
+        }(this));
     </script>
 </body>
 </html>
