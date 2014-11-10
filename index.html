@@ -6,12 +6,20 @@
     <link rel="stylesheet" href="styles/default.css"/>
 </head>
 <body>
-    <img draggable="false" src="http://placeskull.com/170/170" alt="Skull"/>
+    <img draggable="false" src="http://fakeimg.pl/300x200" alt="Skull"/>
     <script src="scripts/MoveMaster.js"></script>
     <script>
         (function (root) {
+            // Catch right element.
+            var $img = root.document.querySelector('img');
+
+            // Move element somewhere.
+            $img.style.top = "50px";
+            $img.style.left = "100px";
+
+            // Run MoveMaster!!1
             return new root.MoveMaster({
-                object: root.document.querySelector('img')
+                object: $img
             });
         }(this));
     </script>

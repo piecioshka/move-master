@@ -1,4 +1,14 @@
-# MoveMaster.js - Apply moving everything!
+# MoveMaster.js - apply moving everything!
+
+```
+
+    _/      _/                                  _/      _/                        _/
+   _/_/  _/_/    _/_/    _/      _/    _/_/    _/_/  _/_/    _/_/_/    _/_/_/  _/_/_/_/    _/_/    _/  _/_/
+  _/  _/  _/  _/    _/  _/      _/  _/_/_/_/  _/  _/  _/  _/    _/  _/_/        _/      _/_/_/_/  _/_/
+ _/      _/  _/    _/    _/  _/    _/        _/      _/  _/    _/      _/_/    _/      _/        _/
+_/      _/    _/_/        _/        _/_/_/  _/      _/    _/_/_/  _/_/_/        _/_/    _/_/_/  _/
+
+```
 
 We have for instance that structure in DOM:
 
@@ -6,7 +16,7 @@ We have for instance that structure in DOM:
 <img id="logo" src="..." alt="Logo" />`
 ```
 
-Create in JS file reference to that element:
+Create in JavaScript file reference to that element:
 
 ```js
 var logo = document.querySelector('#logo');
@@ -24,7 +34,7 @@ To enable moving on selected HTMLElement.
 
 ## API
 
-In settings object:
+In settings:
 
  - `object` - HTMLElement which will be moved
  - `parent` - HTMLElement of parent element, which will be calculate position
