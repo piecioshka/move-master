@@ -3,7 +3,7 @@
 // Author: Piotr Kowalski
 // Contact: piecioshka@gmail.com
 // License: The MIT License
-// Date: 2014-10-10
+// Date: 2014-11-10
 //
 // ### Example
 // ```js
@@ -17,10 +17,24 @@
 (function (root) {
     'use strict';
 
-    var assert;
+    // Utilities.
+    // ----------
 
-    // Aliases.
-    var doc = root.document;
+    /**
+     * Validate that first parameter is true.
+     *
+     * @param {*} value
+     * @param {string} [msg]
+     */
+    var assert = function assert(value, msg) {
+        if (!value) {
+            throw new Error(msg || "Assertion error");
+        }
+    };
+
+
+    // Main module
+    // -----------
 
     /**
      * Apply moving to any HTMLElement.
@@ -31,7 +45,7 @@
      * @param {HTMLElement} options.parent Wrapper of indicated element.
      * @param {HTMLElement} options.reference
      * @constructor
-     * @throws When invalid run `MoveMaster` (withour operator new).
+     * @throws When invalid run `MoveMaster` (without operator new).
      * @throws When params object in options object is not instance of HTMLElement.
      */
     var MoveMaster = function (options) {
@@ -39,7 +53,7 @@
         assert(options.object instanceof root.HTMLElement, 'MoveMaster: Expected `object` as instance of HTMLElement.');
 
         this.element = options.object;
-        this.parent = options.parent || doc.body;
+        this.parent = options.parent || root.document.body;
         this.reference = options.reference;
         this.x = 0;
         this.y = 0;
@@ -51,12 +65,12 @@
     };
 
     /**
-     * Simple patter to extract first logic to `constuctor` from classic OO.
+     * Simple patter to extract first logic to `constructor` from classic OO.
      */
     MoveMaster.prototype.initialize = function () {
         var st = root.getComputedStyle(this.element, null);
-        this.left = parseInt(st.getPropertyValue('left'), 10);
-        this.top = parseInt(st.getPropertyValue('top'), 10);
+        this.left = parseInt(st.getPropertyValue('left'), 10) || 0;
+        this.top = parseInt(st.getPropertyValue('top'), 10) || 0;
 
         this.parent.addEventListener('mousedown', this.start.bind(this), false);
         this.parent.addEventListener('mousemove', this.move.bind(this), false);
@@ -71,6 +85,9 @@
      */
     MoveMaster.prototype.update = function (deltaX, deltaY) {
         var newX, newY;
+
+        assert(typeof deltaX === 'number');
+        assert(typeof deltaY === 'number');
 
         // Calculate new position on X and Y axis.
         newX = this.left + deltaX;
@@ -91,8 +108,12 @@
      * @param {Event} evt
      */
     MoveMaster.prototype.start = function (evt) {
+        assert(evt && evt.target);
+
         if (evt.target === this.element || evt.target === this.reference) {
             this.isMove = true;
+            // Update cursor above moving element.
+            evt.target.style.cursor = 'move';
         }
     };
 
@@ -102,6 +123,8 @@
      * @param {Event} evt
      */
     MoveMaster.prototype.move = function (evt) {
+        assert(evt && evt.target);
+
         if (this.isMove) {
             if (!this.x && !this.y) {
                 this.x = evt.clientX;
@@ -118,23 +141,11 @@
      * @param {Event} evt
      */
     MoveMaster.prototype.stop = function (evt) {
+        assert(evt && evt.target);
+
         this.isMove = false;
-    };
-
-
-    // Utilities.
-    // ----------
-
-    /**
-     * Validate that first parameter is true.
-     *
-     * @param {*} value
-     * @param {string} msg
-     */
-    assert = function assert(value, msg) {
-        if (!value) {
-            throw new Error(msg || "Assertion error");
-        }
+        // Restore cursor to auto mode.
+        evt.target.style.cursor = 'auto';
     };
 
 
