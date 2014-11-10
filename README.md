@@ -1,13 +1,11 @@
 # MoveMaster
 
 ```
-oo          MM'""""'YMM dP oo                     dP
-            M' .mmm. `M 88                        88
-dP .d8888b. M  MMMMMooM 88 dP .d8888b. 88d888b. d8888P
-88 Y8ooooo. M  MMMMMMMM 88 88 88ooood8 88'  `88   88
-88       88 M. `MMM' .M 88 88 88.  ... 88    88   88
-dP `88888P' MM.     .dM dP dP `88888P' dP    dP   dP
-            MMMMMMMMMMM
+
+ _____             _____         _
+|     |___ _ _ ___|     |___ ___| |_ ___ ___
+| | | | . | | | -_| | | | .'|_ -|  _| -_|  _|
+|_|_|_|___|\_/|___|_|_|_|__,|___|_| |___|_|
 
 ```
 
