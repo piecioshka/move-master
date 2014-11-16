@@ -7,8 +7,10 @@
 //
 // ### Example
 // ```js
-// new MoveMaster({
-//     object: document.querySelector('#logo')
+// MoveMaster({
+//     object: document.querySelector('#logo'),
+//     options: document.body,
+//     hook: document.querySelector('#button')
 // });
 // ```
 
@@ -16,22 +18,6 @@
 
 (function (root) {
     'use strict';
-
-    // Utilities.
-    // ----------
-
-    /**
-     * Validate that first parameter is true.
-     *
-     * @param {*} value
-     * @param {string} [msg]
-     */
-    var assert = function assert(value, msg) {
-        if (!value) {
-            throw new Error(msg || "Assertion error");
-        }
-    };
-
 
     // Main module
     // -----------
@@ -43,106 +29,88 @@
      *
      * @param {HTMLElement} options.object Indicated element to move.
      * @param {HTMLElement} options.parent Wrapper of indicated element.
-     * @param {HTMLElement} options.reference
+     * @param {HTMLElement} options.hook
      * @constructor
      * @throws When invalid run `MoveMaster` (without operator new).
      * @throws When params object in options object is not instance of HTMLElement.
      */
     var MoveMaster = function (options) {
-        assert(this instanceof MoveMaster, 'MoveMaster: Use new operator to run MoveMaster constructor.');
-        assert(options.object instanceof root.HTMLElement, 'MoveMaster: Expected `object` as instance of HTMLElement.');
-
-        this.element = options.object;
-        this.parent = options.parent || root.document.body;
-        this.reference = options.reference;
-        this.x = 0;
-        this.y = 0;
-        this.isMove = false;
-        this.left = 0;
-        this.top = 0;
-
-        this.initialize();
-    };
-
-    /**
-     * Simple patter to extract first logic to `constructor` from classic OO.
-     */
-    MoveMaster.prototype.initialize = function () {
-        var st = root.getComputedStyle(this.element, null);
-        this.left = parseInt(st.getPropertyValue('left'), 10) || 0;
-        this.top = parseInt(st.getPropertyValue('top'), 10) || 0;
-
-        this.parent.addEventListener('mousedown', this.start.bind(this), false);
-        this.parent.addEventListener('mousemove', this.move.bind(this), false);
-        this.parent.addEventListener('mouseup', this.stop.bind(this), false);
-    };
-
-    /**
-     * Method updating object what is moved.
-     *
-     * @param {number} deltaX
-     * @param {number} deltaY
-     */
-    MoveMaster.prototype.update = function (deltaX, deltaY) {
-        var newX, newY;
-
-        assert(typeof deltaX === 'number');
-        assert(typeof deltaY === 'number');
-
-        // Calculate new position on X and Y axis.
-        newX = this.left + deltaX;
-        newY = this.top + deltaY;
-
-        this.element.style.left = newX + 'px';
-        this.element.style.top = newY + 'px';
-    };
-
-    /**
-     * Handler call when user run `mousedown` event in parent element.
-     *
-     * @param {Event} evt
-     */
-    MoveMaster.prototype.start = function (evt) {
-        assert(evt && evt.target);
-
-        if (evt.target === this.element || evt.target === this.reference) {
-            this.isMove = true;
-            // Update cursor above moving element.
-            evt.target.style.cursor = 'move';
+        if (!options.object instanceof root.HTMLElement) {
+            throw new Error('MoveMaster: Expected `object` as instance of HTMLElement.');
         }
-    };
 
-    /**
-     * Handler call on each `mousemove` event.
-     *
-     * @param {Event} evt
-     */
-    MoveMaster.prototype.move = function (evt) {
-        assert(evt && evt.target);
+        var element = options.object;
+        var parent = options.parent || root.document.body;
+        var hook = options.hook || null;
+        var isMove = false;
 
-        if (this.isMove) {
-            if (!this.x && !this.y) {
-                this.x = evt.clientX;
-                this.y = evt.clientY;
-            } else {
-                this.update(evt.clientX - this.x, evt.clientY - this.y);
+        var left = 0;
+        var top = 0;
+
+        var startX = 0;
+        var startY = 0;
+
+        // Disable draggable.
+        element.draggable = false;
+
+        // Check that event target is our element or hooker.
+        function isTarget(evt) {
+            return evt.target === element || evt.target === hook;
+        }
+
+        // Load CSS properties: left, top.
+        function loadPosition() {
+            var st = root.getComputedStyle(element, null);
+            left = parseInt(st.getPropertyValue('left'), 10) || 0;
+            top = parseInt(st.getPropertyValue('top'), 10) || 0;
+        }
+
+        // Method updating object what is moved.
+        function update(deltaX, deltaY) {
+            // Calculate new position on X and Y axis.
+            element.style.left = (left + deltaX) + 'px';
+            element.style.top = (top + deltaY) + 'px';
+        }
+
+        // Handler call when user run `mousedown` event in parent element.
+        function start(evt) {
+            if (isTarget(evt)) {
+                parent.addEventListener('mousemove', move, false);
+                parent.addEventListener('mouseup', stop, false);
+
+                isMove = true;
+
+                startX = evt.clientX;
+                startY = evt.clientY;
+
+                // Update cursor above moving element.
+                evt.target.style.cursor = 'move';
             }
         }
+
+        // Handler call on each `mousemove` event.
+        function move(evt) {
+            if (isMove) {
+                update(evt.clientX - startX, evt.clientY - startY);
+            }
+        }
+
+        // Handler of `mouseup` event.
+        function stop(evt) {
+            parent.removeEventListener('mousemove', move, false);
+            parent.removeEventListener('mouseup', stop, false);
+
+            isMove = false;
+            // Restore cursor to auto mode.
+            evt.target.style.cursor = 'auto';
+
+            loadPosition();
+        }
+
+        loadPosition();
+
+        parent.addEventListener('mousedown', start, false);
     };
-
-    /**
-     * Handler of `mouseup` event.
-     *
-     * @param {Event} evt
-     */
-    MoveMaster.prototype.stop = function (evt) {
-        assert(evt && evt.target);
-
-        this.isMove = false;
-        // Restore cursor to auto mode.
-        evt.target.style.cursor = 'auto';
-    };
-
 
     // Exports `MoveMaster`.
     // ---------------------

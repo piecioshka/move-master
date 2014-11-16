@@ -25,8 +25,10 @@ var logo = document.querySelector('#logo');
 Next, run that one line, to enable logo moving:
 
 ```js
-new MoveMaster({
-    object: /* HTMLElement */ logo
+MoveMaster({
+    object: /* HTMLElement */ logo,
+    options: document.body,
+    hook:  /* HTMLElement */ button
 });
 ```
 
@@ -37,8 +39,8 @@ To enable moving on selected HTMLElement.
 In settings:
 
  - `object` - HTMLElement which will be moved
- - `parent` - HTMLElement of parent element, which will be calculate position
- - `reference` - HTMLElement of another element near moved object.
+ - `parent` - HTMLElement of parent element, which will be calculate position. Default `document.body`.
+ - `hook` - HTMLElement of another element near moved object. Default `null`.
 
 ## Restrictions
 

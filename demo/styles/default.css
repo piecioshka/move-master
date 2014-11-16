@@ -1,9 +1,6 @@
 body {
-    /* clear default browser style */
-    margin: 0;
-
     /* required by MoveMaster.js */
-    position: relative;
+    position: absolute;
 
     /* protection to get non-scrolling area */
     overflow: hidden;
@@ -12,8 +9,4 @@ body {
 img {
     /* required by MoveMaster.js */
     position: relative;
-
-    /* better painting */
-    width: 300px;
-    height: 200px;
 }

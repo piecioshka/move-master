@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles/default.css"/>
 </head>
 <body>
-    <img draggable="false" src="http://fakeimg.pl/300x200" alt="Skull"/>
+    <img src="http://fakeimg.pl/300x200" alt="Image" />
     <script src="../MoveMaster.js"></script>
     <script>
         (function (root) {
@@ -18,7 +18,7 @@
             $img.style.left = "100px";
 
             // Run MoveMaster!!1
-            return new root.MoveMaster({
+            root.MoveMaster({
                 object: $img
             });
         }(this));
