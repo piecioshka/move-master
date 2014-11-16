@@ -3,7 +3,7 @@
 // Author: Piotr Kowalski
 // Contact: piecioshka@gmail.com
 // License: The MIT License
-// Date: 2014-11-10
+// Date: 2014-11-16
 //
 // ### Example
 // ```js
@@ -93,13 +93,8 @@
         newX = this.left + deltaX;
         newY = this.top + deltaY;
 
-        if (newX > 0 && newX < root.window.innerWidth - this.element.offsetWidth) {
-            this.element.style.left = newX + 'px';
-        }
-
-        if (newY > 0 && newY < root.window.innerHeight - this.element.offsetHeight) {
-            this.element.style.top = newY + 'px';
-        }
+        this.element.style.left = newX + 'px';
+        this.element.style.top = newY + 'px';
     };
 
     /**
