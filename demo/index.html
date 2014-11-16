@@ -6,22 +6,13 @@
     <link rel="stylesheet" href="styles/default.css"/>
 </head>
 <body>
-    <img src="http://fakeimg.pl/300x200" alt="Image" />
+    <div class="img"></div>
+
     <script src="../MoveMaster.js"></script>
     <script>
-        (function (root) {
-            // Catch right element.
-            var $img = root.document.querySelector('img');
-
-            // Move element somewhere.
-            $img.style.top = "50px";
-            $img.style.left = "100px";
-
-            // Run MoveMaster!!1
-            root.MoveMaster({
-                object: $img
-            });
-        }(this));
+        MoveMaster({
+            object: document.querySelector('div.img')
+        });
     </script>
 </body>
 </html>

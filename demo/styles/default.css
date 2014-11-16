@@ -6,7 +6,16 @@ body {
     overflow: hidden;
 }
 
-img {
+div.img {
     /* required by MoveMaster.js */
     position: relative;
+
+    /* to see something */
+    width: 200px;
+    height: 100px;
+    background: url('http://fakeimg.pl/200x100');
+
+    /* to put somewhere image */
+    top: 50px;
+    left: 100px;
 }
