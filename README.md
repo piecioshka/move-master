@@ -44,7 +44,7 @@ In settings:
 
 ## Restrictions
 
-Tested only under newest _WebKit_ browsers (Chrome, Safari) and _Gecko_ (Firefox).
+Tested only under newest Chrome, Safari, Firefox.
 
 ## License
 

@@ -15,7 +15,7 @@ div.img {
     height: 100px;
     background: url('http://fakeimg.pl/200x100');
 
-    /* to put somewhere image */
+    /* to put image somewhere */
     top: 50px;
     left: 100px;
 }

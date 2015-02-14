@@ -3,7 +3,7 @@
 // Author: Piotr Kowalski
 // Contact: piecioshka@gmail.com
 // License: The MIT License
-// Date: 2014-11-16
+// Date: 2015-02-14
 //
 // ### Example
 // ```js
@@ -32,7 +32,7 @@
      * @throws When params object in options object is not instance of HTMLElement.
      */
     var MoveMaster = function (options) {
-        if (!options.object instanceof root.HTMLElement) {
+        if (root.HTMLElement && !options.object instanceof root.HTMLElement) {
             throw new Error('MoveMaster: Expected `object` as instance of HTMLElement.');
         }
 
@@ -104,12 +104,15 @@
     if (typeof root.define === 'function' && root.define.amd) {
         // Support AMD style.
         root.define('MoveMaster', [], MoveMaster);
+    } else if (typeof root.module === 'object' && module.exports) {
+        // Support node.js style
+        root.module.exports = MoveMaster;
     } else {
         // Simple add global object.
         root.MoveMaster = MoveMaster;
     }
 
-    // If someone don't like if module returns `undefined`.
+    // If someone don't like if module returns nothing.
     return MoveMaster;
 
 }(this));
