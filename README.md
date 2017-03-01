@@ -18,13 +18,13 @@ We have for instance that structure in DOM:
 
 Create in JavaScript file reference to that element:
 
-```js
+```javascript
 var logo = document.querySelector('#logo');
 ```
 
 Next, run that one line, to enable logo moving:
 
-```js
+```javascript
 MoveMaster({
     object: /* HTMLElement */ logo,
     options: document.body,
@@ -48,7 +48,4 @@ Tested only under newest Chrome, Safari, Firefox.
 
 ## License
 
-[The MIT License][0]
-
-
-[0]: http://piecioshka.mit-license.org
+[The MIT License](http://piecioshka.mit-license.org) @ 2014
