@@ -1,7 +1,27 @@
 {
-  "name": "move-master.js",
-  "author": "Piotr Kowalski <piecioshka@gmail.com",
-  "version": "1.0.0",
-  "license": "MIT",
-  "repository": "https://github.com/piecioshka/move-master.js"
+    "name": "move-master",
+    "version": "2.0.0",
+    "author": {
+        "name": "Piotr Kowalski",
+        "email": "piecioshka@gmail.com",
+        "url": "http://piecioshka.pl/"
+    },
+    "main": "src/move-master.js",
+    "scripts": {
+        "clear": "rm -rf node_modules/ npm-debug.log",
+        "lint": "eslint ./src/"
+    },
+    "devDependencies": {
+        "eslint": "^4.3.0",
+        "eslint-config-piecioshka": "^1.1.8"
+    },
+    "files": [
+        "src",
+        "README.md"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/piecioshka/move-master"
+    },
+    "license": "MIT"
 }

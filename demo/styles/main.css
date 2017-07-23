@@ -1,15 +1,9 @@
 body {
-    /* required by MoveMaster.js */
-    position: absolute;
-
     /* protection to get non-scrolling area */
     overflow: hidden;
 }
 
-div.img {
-    /* required by MoveMaster.js */
-    position: relative;
-
+div.picture {
     /* to see something */
     width: 200px;
     height: 100px;
