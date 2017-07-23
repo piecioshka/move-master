@@ -1,6 +1,7 @@
 {
     "name": "move-master",
     "version": "2.0.0",
+    "description": "Move ANY element on page",
     "author": {
         "name": "Piotr Kowalski",
         "email": "piecioshka@gmail.com",
