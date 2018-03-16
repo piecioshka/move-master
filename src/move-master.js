@@ -48,6 +48,7 @@
 
         var left = 0;
         var top = 0;
+        var position = isPositionFixed($element) ? 'fixed' : 'absolute';
 
         // Disable draggable.
         $element.draggable = false;
@@ -55,6 +56,12 @@
         // Check that event target is our element or hooker.
         function isTarget(evt) {
             return evt.target === $element || evt.target === hook;
+        }
+
+        // Check initial position CSS property
+        function isPositionFixed() {
+            var st = root.getComputedStyle($element, null);
+            return st.getPropertyValue('position') === 'fixed';
         }
 
         // Load CSS properties: left, top.
@@ -65,7 +72,7 @@
         }
 
         applyStyles($element, {
-            position: 'absolute'
+            position: position
         });
 
         // Handler call when user run `mousedown` event in parent element.
