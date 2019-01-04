@@ -2,7 +2,7 @@
 
 > :hammer: Move ANY element on page
 
-```
+```text
 
  _____             _____         _           
 |     |___ _ _ ___|     |___ ___| |_ ___ ___ 
@@ -12,9 +12,9 @@
 
 ```
 
-## Demo
+## Demo 🎉
 
-Click: https://codepen.io/piecioshka/full/dXAJdq/
+<https://codepen.io/piecioshka/full/dXAJdq/>
 
 ## How it works?
 
