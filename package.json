@@ -9,14 +9,11 @@
     },
     "main": "src/move-master.js",
     "scripts": {
-        "clear": "rm -rf node_modules/ npm-debug.log",
-        "lint": "eslint ./src/"
+        "clear": "rm -rf node_modules/ npm-debug.log"
     },
-    "devDependencies": {
-        "eslint": "^5.16.0",
-        "eslint-config-piecioshka": "^2.0.1"
-    },
+    "devDependencies": {},
     "files": [
+        "demo",
         "src",
         "README.md"
     ],

@@ -1,16 +1,6 @@
 # move-master
 
-> :hammer: Move ANY element on page
-
-```text
-
- _____             _____         _           
-|     |___ _ _ ___|     |___ ___| |_ ___ ___ 
-| | | | . | | | -_| | | | .'|_ -|  _| -_|  _|
-|_|_|_|___|\_/|___|_|_|_|__,|___|_| |___|_|  
-                                             
-
-```
+:hammer: Move ANY element on page
 
 ## Demo 🎉
 
@@ -46,9 +36,11 @@ To enable moving on selected HTMLElement.
 
 In settings:
 
- - `target` - HTMLElement which will be moved
- - `parent` - HTMLElement of parent element, which will be calculate position. Default `document.body`.
- - `hook` - HTMLElement of another element near moved object. Default `null`.
+- `target` - HTMLElement which will be moved
+- `parent` - HTMLElement of parent element, which will be calculate position.
+  - Default `document.body`.
+- `hook` - HTMLElement of another element near moved object.
+  - Default `null`.
 
 ## License
 
