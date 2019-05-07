@@ -13,8 +13,8 @@
         "lint": "eslint ./src/"
     },
     "devDependencies": {
-        "eslint": "^4.3.0",
-        "eslint-config-piecioshka": "^1.1.8"
+        "eslint": "^5.16.0",
+        "eslint-config-piecioshka": "^2.0.1"
     },
     "files": [
         "src",
