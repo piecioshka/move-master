@@ -2,7 +2,7 @@
 
 :hammer: Move ANY element on page
 
-## Demo 🎉
+## Preview 🎉
 
 <https://codepen.io/piecioshka/full/dXAJdq/>
 
