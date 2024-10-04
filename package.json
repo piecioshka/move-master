@@ -2,15 +2,13 @@
     "name": "move-master",
     "version": "2.0.1",
     "description": "Move ANY element on page",
+    "license": "MIT",
     "author": {
         "name": "Piotr Kowalski",
         "email": "piecioshka@gmail.com",
-        "url": "http://piecioshka.pl/"
+        "url": "https://piecioshka.pl/"
     },
-    "main": "src/move-master.js",
-    "scripts": {
-        "clear": "rm -rf node_modules/ npm-debug.log"
-    },
+    "scripts": {},
     "devDependencies": {},
     "files": [
         "demo",
@@ -19,7 +17,15 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/piecioshka/move-master"
+        "url": "git@github.com:piecioshka/move-master.git"
     },
-    "license": "MIT"
+    "keywords": [
+        "move",
+        "element",
+        "page",
+        "drag",
+        "drop",
+        "move-master"
+    ],
+    "main": "./src/move-master.js"
 }

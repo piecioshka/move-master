@@ -28,6 +28,7 @@
     /**
      * Apply moving to any HTMLElement.
      *
+     * @param {Object} options
      * @param {HTMLElement} options.target Indicated element to move.
      * @param {HTMLElement} [options.parent=document.body] Wrapper of indicated
      *      element.
@@ -48,7 +49,7 @@
 
         var left = 0;
         var top = 0;
-        var position = isPositionFixed($element) ? 'fixed' : 'absolute';
+        var position = isPositionFixed() ? 'fixed' : 'absolute';
 
         // Disable draggable.
         $element.draggable = false;

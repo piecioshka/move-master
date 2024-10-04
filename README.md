@@ -1,5 +1,10 @@
 # move-master
 
+[![node version](https://img.shields.io/node/v/move-master.svg)](https://www.npmjs.com/package/move-master)
+[![npm version](https://badge.fury.io/js/move-master.svg)](https://badge.fury.io/js/move-master)
+[![downloads count](https://img.shields.io/npm/dt/move-master.svg)](https://www.npmjs.com/package/move-master)
+[![license](https://img.shields.io/npm/l/move-master.svg)](https://www.npmjs.com/package/move-master)
+
 :hammer: Move ANY element on page
 
 ## Preview 🎉
@@ -23,6 +28,8 @@ var logo = document.querySelector('#logo');
 Next, run that one line, to enable logo moving:
 
 ```javascript
+const MoveMaster = require('move-master');
+
 MoveMaster({
     target: /* HTMLElement */ logo,
     options: document.body,
@@ -44,4 +51,4 @@ In settings:
 
 ## License
 
-[The MIT License](http://piecioshka.mit-license.org) @ 2014
+[The MIT License](https://piecioshka.mit-license.org) @ 2014

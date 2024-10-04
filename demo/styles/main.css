@@ -7,7 +7,7 @@ div.picture {
     /* to see something */
     width: 200px;
     height: 100px;
-    background: url('http://fakeimg.pl/200x100');
+    background: url('https://fakeimg.pl/200x100');
 
     /* to put image somewhere */
     top: 50px;
