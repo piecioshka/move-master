@@ -3,7 +3,7 @@
 [![node version](https://img.shields.io/node/v/move-master.svg)](https://www.npmjs.com/package/move-master)
 [![npm version](https://badge.fury.io/js/move-master.svg)](https://badge.fury.io/js/move-master)
 [![downloads count](https://img.shields.io/npm/dt/move-master.svg)](https://www.npmjs.com/package/move-master)
-[![license](https://img.shields.io/npm/l/move-master.svg)](https://www.npmjs.com/package/move-master)
+[![license](https://img.shields.io/npm/l/move-master.svg)](https://piecioshka.mit-license.org)
 
 :hammer: Move ANY element on page
 
