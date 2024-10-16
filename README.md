@@ -5,7 +5,7 @@
 [![downloads count](https://img.shields.io/npm/dt/move-master.svg)](https://www.npmjs.com/package/move-master)
 [![license](https://img.shields.io/npm/l/move-master.svg)](https://piecioshka.mit-license.org)
 
-:hammer: Move ANY element on page
+🔨 Move ANY element on page
 
 ## Preview 🎉
 
