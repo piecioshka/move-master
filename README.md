@@ -12,7 +12,7 @@
 
 <https://codepen.io/piecioshka/full/dXAJdq/>
 
-## How it works?
+## How it works? 🚀
 
 We have for instance that structure in DOM:
 
