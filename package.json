@@ -13,7 +13,8 @@
     "files": [
         "demo",
         "src",
-        "README.md"
+        "README.md",
+        "LICENSE"
     ],
     "repository": {
         "type": "git",
